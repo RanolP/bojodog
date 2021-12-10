@@ -1,9 +1,15 @@
 # Change Log
 
-All notable changes to the "bojodog" extension will be documented in this file.
+## 0.0.3
 
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
+- Removed `Bojodog: Show BOJ Problem` command.
+- Added `Bojodog: Search BOJ Problem` command.
+- Refactor source code.
 
-## [Unreleased]
+## 0.0.2
 
-- Initial release
+- Added KaTeX auto render and image proxying.
+
+## 0.0.1
+
+- Added `Bojodog: Show BOJ Problem` command.
