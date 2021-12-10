@@ -13,14 +13,14 @@
     "Other"
   ],
   "activationEvents": [
-    "onCommand:bojodog.showBoj"
+    "onCommand:bojodog.searchBoj"
   ],
   "browser": "./dist/web/extension.js",
   "contributes": {
     "commands": [
       {
-        "command": "bojodog.showBoj",
-        "title": "Bojodog: Show BOJ Problem"
+        "command": "bojodog.searchBoj",
+        "title": "Bojodog: Search BOJ Problem"
       }
     ]
   },
