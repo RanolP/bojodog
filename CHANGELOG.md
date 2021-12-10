@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.0.4
+
+- Hide search prompt on select.
+- Revert \<pre\> styling.
+- Change KaTeX auto render a little bit.
+
 ## 0.0.3
 
 - Removed `Bojodog: Show BOJ Problem` command.

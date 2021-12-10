@@ -39,6 +39,7 @@ export function registerSearchBojCommand(context: vscode.ExtensionContext) {
 
       quickpick.onDidChangeSelection(([{ id }]) => {
         showBojProblem(id);
+        quickpick.hide();
       });
 
       quickpick.show();
