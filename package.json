@@ -4,6 +4,7 @@
   "description": "An assistive tool for BOJ users",
   "version": "0.0.1",
   "author": "RanolP <public.ranolp@gmail.com>",
+  "publisher": "RanolP",
   "repository": "https://github.com/RanolP/bojodog",
   "engines": {
     "vscode": "^1.63.0"

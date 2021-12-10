@@ -8,6 +8,10 @@
 
 ## Release Notes
 
+### 0.0.2
+
+Added KaTeX auto render and image proxying.
+
 ### 0.0.1
 
-Added show command.
+Added `Bojodog: Show BOJ Problem` command.
