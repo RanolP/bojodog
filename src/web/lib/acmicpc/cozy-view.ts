@@ -1,7 +1,7 @@
 import { Problem } from './problem-page';
 
 export function makeCozyView({ id, html }: Problem): string {
-  return `
+  return String.raw`
     <html>
       <head>
         <meta charset="UTF-8">
@@ -10,6 +10,7 @@ export function makeCozyView({ id, html }: Problem): string {
         <title>BOJ #${id}</title>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css" integrity="sha384-R4558gYOUz8mP9YWpZJjofhk+zx0AS11p36HnD2ZKj/6JR5z27gSSULCNHIRReVs" crossorigin="anonymous">
         <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js" integrity="sha384-z1fJDqw8ZApjGO3/unPWUPsIymfsJmyrDVWC8Tv/a1HeOtGmkwNd/7xUS0Xcnvsx" crossorigin="anonymous"></script>
+        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/contrib/auto-render.min.js" integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous"></script>
         <script>
           document.addEventListener("DOMContentLoaded", function() {
             renderMathInElement(document.body, {
@@ -54,7 +55,15 @@ export function makeCozyView({ id, html }: Problem): string {
             text-align: left;
           }
           pre {
+            background: var(--vscode-textCodeBlock-background);
             padding: 0.5em;
+          }
+          .btn {
+            border: none;
+            background: transparent;
+            color: var(--vscode-textLink-activeForeground);
+            cursor: pointer;
+            font-size: inherit;
           }
         </style>
       </head>
@@ -66,10 +75,6 @@ export function makeCozyView({ id, html }: Problem): string {
               continue;
             }
             btn.onclick = () => navigator.clipboard.writeText(document.querySelector(btn.dataset.clipboardTarget).innerText);
-          }
-          for (const img of document.getElementsByTagName('img')) {
-            console.log(img.src);
-            // img.src = 'https://api.allorigins.win/raw?url=' + encodeURIComponent(img.src.includes('://') ? img.src : new URL(img.src, 'https://acmicpc.net/'));
           }
         </script>
       </body>

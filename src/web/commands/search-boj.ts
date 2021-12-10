@@ -18,28 +18,20 @@ export function registerSearchBojCommand(context: vscode.ExtensionContext) {
       quickpick.title = 'Search BOJ Problem';
       quickpick.items = [];
       quickpick.matchOnDescription = true;
-      quickpick.ignoreFocusOut = true;
 
-      let previousTimer: NodeJS.Timeout | null = null;
-
-      quickpick.onDidChangeValue((value) => {
-        if (previousTimer) {
-          clearTimeout(previousTimer);
-        }
-        previousTimer = setTimeout(async () => {
-          const problems = await getSearchSuggestion(value);
-          quickpick.items = problems.map(({ id, title }) => ({
-            id,
-            title,
-            label: title,
-            description: `#${id}`,
-          }));
-        }, 200);
+      quickpick.onDidChangeValue(async (value) => {
+        const problems = await getSearchSuggestion(value);
+        quickpick.items = problems.map(({ id, title }) => ({
+          id,
+          title,
+          label: title,
+          description: `#${id}`,
+        }));
       });
 
       quickpick.onDidChangeSelection(([{ id }]) => {
         showBojProblem(id);
-        quickpick.hide();
+        quickpick.dispose();
       });
 
       quickpick.show();

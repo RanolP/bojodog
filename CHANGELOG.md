@@ -1,5 +1,10 @@
 # Change Log
 
+## 0.0.5
+
+- Actually 0.0.4 fixed nothing.
+- This version will save us.
+
 ## 0.0.4
 
 - Hide search prompt on select.

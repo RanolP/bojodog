@@ -12,4 +12,6 @@
 
 ## Features
 
-![Show the BOJ problem](images/show.png)
+Search BOJ problems and read in vs code.
+
+![Search BOJ problem](images/search.gif)
