@@ -22,7 +22,25 @@
         "command": "bojodog.searchBoj",
         "title": "Bojodog: Search BOJ Problem"
       }
-    ]
+    ],
+    "configuration": {
+      "title": "Bojodog",
+      "properties": {
+        "bojodog.search.openLocation": {
+          "type": "string",
+          "description": "Where to open the search result",
+          "enum": [
+            "activeTab",
+            "besideTab"
+          ],
+          "enumDescriptions": [
+            "Open search result on active tab",
+            "Open search result on beside(next to active) tab"
+          ],
+          "default": "besideTab"
+        }
+      }
+    }
   },
   "scripts": {
     "test": "vscode-test-web --browserType=chromium --extensionDevelopmentPath=. --extensionTestsPath=dist/web/test/suite/index.js",

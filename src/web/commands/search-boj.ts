@@ -30,7 +30,12 @@ export function registerSearchBojCommand(context: vscode.ExtensionContext) {
       });
 
       quickpick.onDidChangeSelection(([{ id }]) => {
-        showBojProblem(id);
+        showBojProblem(
+          id,
+          vscode.workspace
+            .getConfiguration('bojodog')
+            .get('search.openLocation')
+        );
         quickpick.dispose();
       });
 

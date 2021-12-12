@@ -1,7 +1,12 @@
 import * as vscode from 'vscode';
 import { fetchProblemPage, makeCozyView } from '../acmicpc';
 
-export async function showBojProblem(id: number): Promise<void> {
+export type OpenLocation = 'activeTab' | 'besideTab';
+
+export async function showBojProblem(
+  id: number,
+  openLocation: OpenLocation = 'besideTab'
+): Promise<void> {
   const problem = await vscode.window.withProgress(
     {
       location: vscode.ProgressLocation.Notification,
@@ -26,7 +31,10 @@ export async function showBojProblem(id: number): Promise<void> {
     'bojodog.showBoj',
     `BOJ #${id}`,
     {
-      viewColumn: vscode.ViewColumn.Beside,
+      viewColumn:
+        openLocation === 'activeTab'
+          ? vscode.ViewColumn.Active
+          : vscode.ViewColumn.Beside,
       preserveFocus: true,
     },
     {
