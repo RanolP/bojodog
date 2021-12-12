@@ -1,5 +1,10 @@
 # Change Log
 
+## 0.0.6
+
+- Forgot to write changelog.
+- You can open problem on active tab.
+
 ## 0.0.5
 
 - Actually 0.0.4 fixed nothing.
